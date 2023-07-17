@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Post</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-pzjw8f+ua6UYt6TFY/51uWnPdz/1O/tTqIlzr5fSUE3qE2EHR7Q6t1vIdk1k7b4" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <h2>Create Post</h2>
+    <form th:action="@{create_post}" th:object="${post}" method="post">
+        <div class="form-group">
+            <label for="content">Content:</label>
+            <textarea id="content" th:field="*{content}" class="form-control" required></textarea>
+        </div>
+        <!-- Add more fields if needed -->
+        <div>
+            <button type="submit" class="btn btn-primary">Create</button>
+        </div>
+    </form>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-C3oMHTd0E1MdKmyo1wFx56pKUEVfZG1voZfTx13uILdWyk8Ofv7fvIK/0QYD4G7z" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-pzjw8f+ua6UYt6TFY/51uWnPdz/1O/tTqIlzr5fSUE3qE2EHR7Q6t1vIdk1k7b4" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+<h2>Welcome <span th:text="${userName}"></span>.</h2>
+<div>
+    <a href="/all_post">View All Posts</a>
+</div>
+<hr>
+<div>
+    <a href="/create_post">Create New Post</a>
+</div>
+
+<hr>
+<div th:each="post : ${posts}" >
+    <div>
+        <h3 th:text="${post.appUser.getFirstName() + ' ' + post.appUser.getLastName()}"></h3>
+        <p th:text="${post.content}"></p>
+    </div>
+</div>
+
+</div>
+<!--<<!&ndash; Add more links as needed &ndash;>>-->
+<a href="/api/facebook/login">Logout</a>
+</body>
+</html>

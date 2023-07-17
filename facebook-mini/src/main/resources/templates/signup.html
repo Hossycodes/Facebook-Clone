@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facebook Sign Up</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+<div class="container">
+  <h2>Create a new account</h2>
+  <form th:action="@{/api/facebook/signup}" method="POST" th:object="${appUser}">
+
+<!--  <form th:action="@{/api/facebook/signup}" method="POST" th:object="${appUser}">-->
+
+    <!-- Rest of the form code -->
+
+
+  <div class="form-group">
+      <label for="firstName">First Name:</label>
+      <input type="text" class="form-control" id="firstName" th:field="*{firstName}" placeholder="Enter your first name">
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last Name:</label>
+      <input type="text" class="form-control" id="lastName" th:field="*{lastName}" placeholder="Enter your last name">
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" th:field="*{email}" placeholder="Enter your email address">
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" class="form-control" id="password" th:field="*{password}" placeholder="Enter a password">
+    </div>
+    <div class="form-group">
+    <label for="country">Country</label>
+    <input type="text" class="form-control" id="country" th:field="*{country}" placeholder="Enter your country">
+    </div>
+
+<!--    <div class="form-group">-->
+<!--    <label for="phoneNumber">Phone Number:</label>-->
+<!--    <input type="text" class="form-control" id="phoneNumber" th:field="*{phoneNumber}" placeholder="Enter your phone number">-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--      <label for="dateOfBirth">Date of Birth:</label>-->
+<!--      <input type="date" class="form-control" th:field="*{dateOfBirth}" id="dateOfBirth">-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--      <label for="gender">Gender:</label>-->
+<!--      <select class="form-control" id="gender" th:field="*{gender}">-->
+<!--        <option value="">Select your gender</option>-->
+<!--        <option value="MALE">Male</option>-->
+<!--        <option value="FEMALE">Female</option>-->
+<!--      </select>-->
+<!--    </div>-->
+
+    <button type="submit" class="btn btn-primary">Sign Up</button>
+  </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
